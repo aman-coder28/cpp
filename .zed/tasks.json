@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Run C++ File",
+    "command": "clang++ $ZED_FILE -o ./build/$ZED_STEM && ./build/$ZED_STEM",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system"
+  }
+]
