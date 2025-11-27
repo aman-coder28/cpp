@@ -5,10 +5,8 @@
 using namespace std;
 
 string toBinary(int decimal) {
-  int local = 0;
   int var = 0;
   string bins = "";
-  int index = 0;
 
   if (decimal != 1) {
     var = decimal / 2;
