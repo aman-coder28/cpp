@@ -1,25 +1,59 @@
+#include <cstdio>
 #include <string>
 using namespace std;
 
+struct Adress {
+  string city;
+  string post;
+};
+
+struct Empolye {
+  string name;
+  Adress workAdress;
+  Adress homeAdress;
+
+  void printInfo() {
+    printf("name: %s, work at: %s, home at: %s. \n", name.c_str(),
+           workAdress.post.c_str(), homeAdress.post.c_str());
+  }
+};
+
 struct Car {
   string model;
-  float speed;
+  int speed;
   string type;
+
+  struct Engine {
+    int power;
+    int force;
+  } engine;
+
+  void boostSpeed() {
+    speed = 300;
+
+    printf("Speed Bootsted! now, the speed is %i km/hr. \n", speed);
+  }
+
+  void getData() {
+    printf("model: %s, speed: %i km/hr, type: %s, engine power: %i, engine "
+           "force: %i. \n",
+           model.c_str(), speed, type.c_str(), engine.power, engine.force);
+  }
 };
 
 int main() {
-  Car myCar = {.model = "Sky", .speed = 280, .type = "Sports"};
+  Car SkyBlue = {"SkyBlue", 200, "Sports", {200, 100}};
+  Car *myCar = &SkyBlue;
 
-  auto boostSpeed = [&myCar]() {
-    myCar.speed = 300;
+  myCar->getData();
 
-    printf("now, the speed is %f km/hr.", myCar.speed);
-  };
+  myCar->boostSpeed();
 
-  printf("model: %s, speed: %f km/hr, type: %s. \n", myCar.model.c_str(),
-         myCar.speed, myCar.type.c_str());
+  Adress home = {"A.A", "mexico"};
 
-  boostSpeed();
+  Empolye amn = {"amn", {"A.A", "kore"}, home};
+
+  amn.printInfo();
 
   return 0;
 }
