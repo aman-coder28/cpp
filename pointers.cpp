@@ -9,7 +9,7 @@ int main() {
 
   cout << *myName << "\n";
 
-  *myName = "c with classes";
+  (*myName) = "c with classes";
 
   cout << *myName << "\n";
 
