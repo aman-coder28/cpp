@@ -7,7 +7,7 @@ struct Adress {
   string post;
 };
 
-struct Empolye {
+struct Empolyee {
   string name;
   Adress workAdress;
   Adress homeAdress;
@@ -51,7 +51,7 @@ int main() {
 
   Adress home = {"A.A", "mexico"};
 
-  Empolye amn = {"amn", {"A.A", "kore"}, home};
+  Empolyee amn = {"amn", {"A.A", "kore"}, home};
 
   amn.printInfo();
 
