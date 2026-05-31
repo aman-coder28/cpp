@@ -1,11 +1,11 @@
 #include <cctype>
 #include <iostream>
+#include <ostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
-// Optimize this function
 vector<string> split(string s, string del = " ") {
   int start, end = -1 * del.size();
   vector<string> items;
@@ -35,10 +35,26 @@ string capitalize(string word) {
   return capped;
 }
 
-int main() {
-  string name = "zeamanuel tigistu";
+int add(int x, int y) { return x + y; }
+double add(double x, double y) { return x + y; }
+double add(double x, int y) { return x + y; }
+double add(int x, double y) { return x + y; }
+string add(string x, string y) { return x + " " + y; }
 
-  cout << capitalize(name) << endl;
+int main() {
+  string name = capitalize("zeamanuel tigistu");
+
+  auto add_and_double = [&name](float x, float y) {
+    cout << name << "has added and doubled, " << x << " and " << y << " = ";
+
+    double result = add(x, y);
+
+    return result * 2;
+  };
+
+  cout << add_and_double(4, 5) << "." << endl;
+
+  cout << add("I'm", "Cool!") << " " << add("and", "I know it.");
 
   return 0;
 }
