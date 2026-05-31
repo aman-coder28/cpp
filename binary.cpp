@@ -6,29 +6,20 @@ using namespace std;
 
 string toBinary(int decimal) {
   int var = 0;
-  string bins = "";
 
   if (decimal != 1) {
     var = decimal / 2;
 
     int mod = decimal - var * 2;
 
-    bins.append(to_string(abs(mod)));
-
-    toBinary(var);
+    return toBinary(var) + to_string(abs(mod));
   } else {
-    bins.append(to_string(1));
+    return  to_string(1);
   }
-
-  for (auto bin : bins) {
-    cout << bin << " ";
-  }
-
-  return bins;
 }
 
 int main() {
-  toBinary(4);
+  cout << toBinary(5);
 
   return 0;
 }

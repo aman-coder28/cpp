@@ -1,2 +1,9 @@
 build/
 .vscode/
+!*/
+!*.cpp
+!*.c
+!*.h
+!*.hpp
+!*.cmake
+!*.clang-format
