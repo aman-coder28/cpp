@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 int main() {
   int x, y;
   char opr;
@@ -21,11 +20,11 @@ int main() {
     cout << x << " " << opr << " " << y << " = " << x + y;
   } else if (opr == '-') {
     cout << x << opr << y << " = " << x - y;
-  }  else if (opr == 'x') {
+  } else if (opr == 'x') {
     cout << x << opr << y << " = " << x * y;
   } else {
     cout << x << opr << y << " = " << x + y;
   }
 
-  return  0;
+  return 0;
 }

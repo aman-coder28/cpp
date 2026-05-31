@@ -14,7 +14,7 @@ string toBinary(int decimal) {
 
     return toBinary(var) + to_string(abs(mod));
   } else {
-    return  to_string(1);
+    return to_string(1);
   }
 }
 
