@@ -9,7 +9,7 @@ std::string cap(std::string word) {
 }
 
 int main() {
-  std::string name = "zeaman";
+  std::string name = "zeamanuel";
 
   std::print("Hello, {}!", cap(name));
 
