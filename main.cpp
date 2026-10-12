@@ -1,17 +1,11 @@
-#include <cctype>
 #include <print>
 #include <string>
-
-std::string cap(std::string word) {
-  char first = toupper(word.at(0));
-
-  return first + word.substr(1, word.length());
-}
+import cap;
 
 int main() {
-  std::string name = "zeamanuel";
+  std::string name = "emmanuel zx";
 
-  std::print("Hello, {}!", cap(name));
+  std::print("Hello, {}!", Cap(name));
 
   return 0;
 }
