@@ -7,7 +7,7 @@ import splt;
 
 export module cap;
 
-export std::string Cap(std::string word) {
+export std::string Cap(std::string &word) {
   if (word.empty()) {
     return word;
   }
@@ -28,8 +28,8 @@ export std::string Cap(std::string word) {
     return splitted | std::views::join_with(' ')
       | std::ranges::to<std::string>();
   } else {
-    char first = std::toupper(word[0]);
+    word.at(0) = std::toupper(word[0]);
 
-    return first + word.substr(1);
+    return word;
   }
 }
