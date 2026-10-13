@@ -20,15 +20,15 @@ export std::string Cap(std::string word) {
         return s;
       }
 
-      s[0] = std::toupper(s[0]);
+      s.at(0) = std::toupper(s[0]);
 
       return s;
     });
 
-    return splitted | std::views::join_with(' ') |
-           std::ranges::to<std::string>();
+    return splitted | std::views::join_with(' ')
+      | std::ranges::to<std::string>();
   } else {
-    char first = toupper(word[0]);
+    char first = std::toupper(word[0]);
 
     return first + word.substr(1);
   }
